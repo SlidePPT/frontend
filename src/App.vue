@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <button @click="install()"></button>
+    <button @click="install()">모바일</button>
+    <router-view/>
   </div>
 </template>
 <script>
@@ -14,14 +15,14 @@ export default {
       deferredPrompt: null,
     };
   },
-  mounted() {
+   mounted() {
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
       this.deferredPrompt = e;
       e.prompt();
     });
   },
-  methods:{
+  methods: {
     install() {
       this.deferredPrompt.prompt();
     },
