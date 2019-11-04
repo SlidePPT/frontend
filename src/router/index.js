@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Create from '../views/create.vue'
+import Create2 from '../views/create2.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: '/create',
     name: "create",
     component: Create
+  },
+  {
+    path: '/create2',
+    name: "create2",
+    component: Create2
   }
 
 ]

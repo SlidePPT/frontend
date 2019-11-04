@@ -1,6 +1,6 @@
 <template>
   <div class="create__warp">
-    <div class="create__title">PPT를 생성 하시겠습니까?</div>
+    <div class="create__title">Key : QSFYFSEFCT</div>
     <div class="create__Box">
       <div class="create__yes create__flex" @click="yes()">
         <span>네</span>
@@ -14,10 +14,7 @@
 <script>
 export default {
   methods: {
-    yes() {
-      this.$store.state.router = "left";
-      this.$router.push("/create2");
-    },
+    yes() {},
     no() {
       this.$store.state.router = "up";
       this.$router.push("/");

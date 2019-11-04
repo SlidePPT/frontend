@@ -26,6 +26,19 @@ export default {
   transform: translateY(-100%);
 }
 
+.left-enter {
+  transform: translateX(100%);
+}
+.left-enter-to {
+  transform: translateX(0px);
+}
+.left-leave {
+  transform: translateX(0px);
+}
+.left-leave-to {
+  transform: translateX(-100%);
+}
+
 .up-enter {
   transform: translateY(-100%);
 }

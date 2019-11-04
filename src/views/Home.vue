@@ -3,7 +3,7 @@
     <img class="Main__Title" src="../assets/sliceLogo.png" width="300px" height="300px" />
     <input class="Main__Input" :placeholder="data" @keyup.enter="input" v-model="input" />
     <div class="Main__Create" @click="create()">코드생성</div>
-    <div @click="install()" style="padding:10px;">모바일 앱 다운</div>
+    <div @click="install()" style="padding:10px; font-size: 18px;">모바일 앱 다운</div>
   </div>
 </template>
 <script>
@@ -53,5 +53,6 @@ export default {
 .Main__Create {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 </style>
