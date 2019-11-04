@@ -28,6 +28,7 @@ export default {
     },
     input() {},
     create() {
+      this.$store.state.router = "down";
       this.$router.push("./create");
     }
   }

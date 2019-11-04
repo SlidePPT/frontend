@@ -1,25 +1,44 @@
 <template>
   <div id="app">
-    <transition name="page">
+    <transition :name="$store.state.router">
       <router-view class="router-view"></router-view>
     </transition>
   </div>
 </template>
 <script>
+export default {
+  data() {
+    return {};
+  }
+};
 </script>
 <style>
-.page-enter {
+.down-enter {
   transform: translateY(100%);
 }
-.page-enter-to {
+.down-enter-to {
   transform: translateY(0px);
 }
-.page-leave {
+.down-leave {
   transform: translateY(0px);
 }
-.page-leave-to {
+.down-leave-to {
   transform: translateY(-100%);
 }
+
+.up-enter {
+  transform: translateY(-100%);
+}
+.up-enter-to {
+  transform: translateY(0px);
+}
+.up-leave {
+  transform: translateY(0px);
+}
+.up-leave-to {
+  transform: translateY(100%);
+}
+
 .router-view {
   position: absolute;
   transition: transform 1.5s;
