@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Create from '../views/create.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -9,7 +10,12 @@ const routes = [
     name: 'home',
     component: Home
   },
-  
+  {
+    path: '/create',
+    name: "create",
+    component: Create
+  }
+
 ]
 
 const router = new VueRouter({
