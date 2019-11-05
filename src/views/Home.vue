@@ -46,9 +46,10 @@ export default {
 .Main__Input {
   padding: 15px;
   border-radius: 20px;
-  box-shadow: 3px 3px 5px;
+  box-shadow: 3px 3px 2px #222222;
   min-width: 300px;
   margin: 10px;
+  opacity: 0.9;
 }
 .Main__Create {
   margin-top: 10px;
