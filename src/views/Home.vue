@@ -41,7 +41,7 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .Main__Input {
   padding: 15px;
