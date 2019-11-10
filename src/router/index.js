@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Create from '../views/create.vue'
 import Main from '../views/main.vue'
+import Template from "../component/Template/one/Template5.vue"
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
     path: '/main',
     name: "main",
     component: Main
+  },
+  {
+    path: '/template',
+    name : "template",
+    component: Template
   }
 
 ]
