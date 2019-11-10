@@ -1,8 +1,8 @@
 <template>
   <div class="first">
     <div class="fristb">
-        <div class="title" :class="{fs: com}">Thanks for listening</div>
-        <div class="title__sub" :class="{fss: com}" >감사합니다</div>
+        <div class="title" :class="{fs: com, cs: comm}">{{data.title}}</div>
+        <div class="title__sub" :class="{fss: com, css: comm}" >{{data.text}}</div>
     </div>
   </div>
 </template>
@@ -10,7 +10,9 @@
 <script>
 export default {
     props:{
-        com : Boolean
+        com : Boolean,
+        comm : Boolean,
+        data :Object
     }
 }
 </script>
@@ -62,5 +64,12 @@ export default {
 .title__sub{
     font-size: 2rem;
     margin:30px;
+}
+.cs{
+    font-size: 3rem !important;
+    
+}
+.css{
+     font-size: 1.9rem !important;
 }
 </style>

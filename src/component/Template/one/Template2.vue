@@ -1,10 +1,11 @@
 <template>
   <div class="first">
     <div class="fristb">
-        <div class="title" :class="{fs: com}">목차</div>
-        <div class="title__sub" :class="{fss: com}" >
-            <div>1. 정보통신 수행평가</div>
-            <div>2. 만점 가즈아!!</div>
+        <div class="title" :class="{fs: com , cs: comm}">{{data.title}}</div>
+        <div>
+            <div class="title__sub" :class="{fss: com , css: comm}" v-for="(a,index) of data.text" :key="index" >
+                <div>{{a}}</div>
+            </div>
         </div>
     </div>
   </div>
@@ -13,7 +14,9 @@
 <script>
 export default {
     props:{
-        com : Boolean
+        com : Boolean,
+        comm : Boolean,
+        data :Object
     }
 }
 </script>
@@ -47,8 +50,13 @@ export default {
 .fss{
     font-size: 10px !important;
     margin-left:1.5rem !important;
+}
+.cs{
+    font-size: 3rem !important;
     
-
+}
+.css{
+     font-size: 1.9rem !important;
 }
 .firstc{
     width: 5%;
@@ -73,7 +81,7 @@ export default {
     margin-left:10rem;
 }
 .title__sub > * {
-    margin-top:10%;
-    margin-bottom: 10%; 
+    margin-top:3%;
+    margin-bottom: 3%; 
 }
 </style>

@@ -26,7 +26,9 @@ export default {
     Nav,
     Section,
     Form
-  }
+  },
+  
+
 };
 </script>
 <style scoped>

@@ -1,39 +1,39 @@
 <template>
   <div class="nav">
-      <div class="test" style="transform: scale(1.1,1.1);">
-        <Test :com="true" ></Test>
+      <div  v-for="(a,index) in $store.state.ppt.number" :key="index" :data="a" :class="($store.state.ppt.now == Number(index))? 'scale test':'test'" @click="change(index)">
+        <Test1 :com="true" v-if="a.number == '1'" :data="a" ></Test1>
+        <Test2 :com="true" v-if="a.number == '2'" :data="a" ></Test2>
+        <Test3 :com="true" v-if="a.number == '3'" :data="a" ></Test3>
+        <Test4 :com="true" v-if="a.number == '4'" :data="a" ></Test4>
+        <Test5 :com="true" v-if="a.number == '5'" :data="a" ></Test5>
       </div>
-      <div class="test">
-        <Test1 :com="true" ></Test1>
-      </div>
-       <div class="test">
-        <Test2 :com="true" ></Test2>
-      </div>
-      <div class="test">
-        <Test3 :com="true" ></Test3>
-      </div>
-      <div class="test">
-        <Test4 :com="true" ></Test4>
-      </div>
-    </div>
+</div>
+      
 </template>
 
 <script>
-import Test from "../../component/Template/one/Template1"
-import Test1 from "../../component/Template/one/Template2"
-import Test2 from "../../component/Template/one/Template3"
-import Test3 from "../../component/Template/one/Template4"
-import Test4 from "../../component/Template/one/Template5"
+import Test1 from "../../component/Template/one/Template1"
+import Test2 from "../../component/Template/one/Template2"
+import Test3 from "../../component/Template/one/Template3"
+import Test4 from "../../component/Template/one/Template4"
+import Test5 from "../../component/Template/one/Template5"
 
 
 export default {
 components:{
-    Test,
     Test1,
-     Test2,
+    Test2,
      Test3,
-     Test4
+     Test4,
+     Test5
+},
+methods:{
+    change(number){
+        console.log(number)
+        this.$store.state.ppt.now = Number(number)
+    }
 }
+
 }
 </script>
 
@@ -60,5 +60,9 @@ components:{
     border: 2px solid black;
     margin-left: auto;
     margin-right: auto;
+    transition: 0.5s;
+}
+.scale{
+     transform: scale(1.1);
 }
 </style>

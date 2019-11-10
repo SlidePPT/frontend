@@ -2,8 +2,8 @@
   <div class="first">
     <div class="fristb">
         <div class="firstc"></div>
-        <div class="title" :class="{fs: com}">Able</div>
-        <div class="title__sub" :class="{fss: com}" >시각장애인을 위한 음성 명령형 웹 브라우저</div>
+        <div class="title" :class="{fs: com, cs: comm}">{{data.title}}</div>
+        <div class="title__sub" :class="{fss: com , css: comm}" >{{data.subTitle}}</div>
     </div>
   </div>
 </template>
@@ -11,7 +11,9 @@
 <script>
 export default {
     props:{
-        com : Boolean
+        com : Boolean,
+        comm : Boolean,
+        data :Object
     }
 }
 </script>
@@ -45,6 +47,12 @@ export default {
 .fss{
     margin:5px !important;
     font-size: 8px !important;
+}
+.cs{
+     font-size: 4rem !important;
+}
+.css{
+    font-size: 1.5rem !important;
 }
 .firstc{
     width: 5%;
