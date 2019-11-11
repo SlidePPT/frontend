@@ -13,9 +13,9 @@ export default {
 };
 </script>
 <style>
-#app{
+#app {
   width: 100%;
-  height:100vh;
+  height: 100vh;
 }
 .down-enter {
   transform: translateY(100%);
@@ -41,6 +41,19 @@ export default {
 }
 .left-leave-to {
   transform: translateX(-100%);
+}
+
+.right-enter {
+  transform: translateX(-100%);
+}
+.right-enter-to {
+  transform: translateX(0px);
+}
+.right-leave {
+  transform: translateX(0px);
+}
+.right-leave-to {
+  transform: translateX(100%);
 }
 
 .up-enter {
