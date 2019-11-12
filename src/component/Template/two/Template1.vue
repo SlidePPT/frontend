@@ -1,7 +1,6 @@
 <template>
   <div class="first">
     <div class="fristb">
-      <div class="firstc"></div>
       <div class="title" :class="{fs: com, cs: comm}">{{data.title}}</div>
       <div class="title__sub" :class="{fss: com , css: comm}">{{data.subTitle}}</div>
     </div>
@@ -22,7 +21,10 @@ export default {
 .first {
   width: 100%;
   height: 100%;
-  background-color: #4fc1e9;
+  background-image: url("../../../assets/bgc.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
@@ -31,12 +33,11 @@ export default {
   width: 90%;
   height: 80%;
   border-radius: 2rem 2rem 0px 0px;
-  background-color: white;
   position: absolute;
   bottom: 0;
   margin: 0px auto;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
 }

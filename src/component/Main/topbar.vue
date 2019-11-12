@@ -1,6 +1,13 @@
 <template>
   <div class="topbar">
-    <div class="key">Key : QSFYFSEFCT</div>
+    <div class="key">Key : {{this.$store.state.code}}</div>
+    <div style="display:flex;">
+      <div style="margin:10px" @click="addview1()">시작화면추가</div>
+      <div style="margin:10px" @click="addview2()">목차화면추가</div>
+      <div style="margin:10px" @click="addview3()">화면1추가</div>
+      <div style="margin:10px" @click="addview4()">화면2추가</div>
+      <div style="margin:10px" @click="addview5()">END화면추가</div>
+    </div>
     <div style="display:flex; margin:20px;">
       <div class="save">저장하기</div>
       <div class="exit" @click="exit()">나가기</div>
@@ -14,6 +21,21 @@ export default {
     exit() {
       this.$store.state.router = "right";
       this.$router.push("/");
+    },
+    addview1() {
+      this.$store.commit("addview1");
+    },
+    addview2() {
+      this.$store.commit("addview2");
+    },
+    addview3() {
+      this.$store.commit("addview3");
+    },
+    addview4() {
+      this.$store.commit("addview4");
+    },
+    addview5() {
+      this.$store.commit("addview5");
     }
   }
 };

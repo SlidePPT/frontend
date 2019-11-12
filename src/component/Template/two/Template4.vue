@@ -1,9 +1,10 @@
 <template>
   <div class="first">
     <div class="fristb">
-      <div class="firstc"></div>
       <div class="title" :class="{fs: com, cs: comm}">{{data.title}}</div>
-      <div class="title__sub" :class="{fss: com , css: comm}">{{data.subTitle}}</div>
+      <div class="title__sub" :class="{fss: com, css: comm}">
+        <div class="title__sub__right" :class="{fss: com , css: comm}">{{data.text}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,13 +25,13 @@ export default {
   height: 100%;
   background-color: #4fc1e9;
   position: relative;
+  opacity: 0.7;
+  justify-content: flex-end;
   display: flex;
-  justify-content: center;
 }
 .fristb {
   width: 90%;
-  height: 80%;
-  border-radius: 2rem 2rem 0px 0px;
+  height: 100%;
   background-color: white;
   position: absolute;
   bottom: 0;
@@ -41,18 +42,11 @@ export default {
   flex-direction: column;
 }
 .fs {
-  margin: 5px !important;
-  font-size: 20px !important;
+  font-size: 15px !important;
+  margin-left: 1rem !important;
 }
 .fss {
-  margin: 5px !important;
-  font-size: 8px !important;
-}
-.cs {
-  font-size: 4rem !important;
-}
-.css {
-  font-size: 1.5rem !important;
+  font-size: 1px !important;
 }
 .firstc {
   width: 5%;
@@ -64,12 +58,38 @@ export default {
   top: 0;
 }
 .title {
+  position: absolute;
+  top: 5%;
+  left: 0%;
   font-size: 4rem;
-  margin: 15px;
   font-family: bold;
+  text-align: start;
+  margin-left: 2rem;
 }
 .title__sub {
   font-size: 2rem;
-  margin: 30px;
+  width: 90%;
+  height: 60%;
+  display: flex;
+}
+.title__sub > * {
+  margin: 0.5rem;
+  flex: 1;
+}
+.title__sub__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title__sub__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cs {
+  font-size: 3rem !important;
+}
+.css {
+  font-size: 1.9rem !important;
 }
 </style>

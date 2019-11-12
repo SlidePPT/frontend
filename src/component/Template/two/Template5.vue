@@ -1,9 +1,8 @@
 <template>
   <div class="first">
     <div class="fristb">
-      <div class="firstc"></div>
       <div class="title" :class="{fs: com, cs: comm}">{{data.title}}</div>
-      <div class="title__sub" :class="{fss: com , css: comm}">{{data.subTitle}}</div>
+      <div class="title__sub" :class="{fss: com, css: comm}">{{data.text}}</div>
     </div>
   </div>
 </template>
@@ -25,15 +24,15 @@ export default {
   background-color: #4fc1e9;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  opacity: 0.7;
 }
 .fristb {
   width: 90%;
-  height: 80%;
-  border-radius: 2rem 2rem 0px 0px;
+  height: 100%;
   background-color: white;
   position: absolute;
-  bottom: 0;
+  top: 0;
   margin: 0px auto;
   display: flex;
   justify-content: center;
@@ -47,12 +46,6 @@ export default {
 .fss {
   margin: 5px !important;
   font-size: 8px !important;
-}
-.cs {
-  font-size: 4rem !important;
-}
-.css {
-  font-size: 1.5rem !important;
 }
 .firstc {
   width: 5%;
@@ -71,5 +64,11 @@ export default {
 .title__sub {
   font-size: 2rem;
   margin: 30px;
+}
+.cs {
+  font-size: 3rem !important;
+}
+.css {
+  font-size: 1.9rem !important;
 }
 </style>

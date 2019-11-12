@@ -16,7 +16,7 @@ export default {
   methods: {
     yes() {
       this.$store.state.router = "left";
-      this.$router.push("/main");
+      this.$router.push("/create2");
     },
     no() {
       this.$store.state.router = "up";

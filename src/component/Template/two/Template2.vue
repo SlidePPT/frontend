@@ -2,15 +2,15 @@
   <div class="first">
     <div class="fristb">
       <div class="title" :class="{fs: com , cs: comm}">{{data.title}}</div>
-      <div class="title__sub" :class="{fss: com , css: comm}">
-        <div class="title__sub__left">
-          <div
-            style="width:70%; height:70%; "
-            class="bg"
-            :style="{'background-image': 'url(' + data.image + ')'}"
-          ></div>
+      <div>
+        <div
+          class="title__sub"
+          :class="{fss: com , css: comm}"
+          v-for="(a,index) of data.text"
+          :key="index"
+        >
+          <div>{{a}}</div>
         </div>
-        <div class="title__sub__right" :class="{fss: com , css: comm}">{{data.text}}</div>
       </div>
     </div>
   </div>
@@ -27,18 +27,14 @@ export default {
 </script>
 
 <style scoped>
-.bg {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
 .first {
   width: 100%;
   height: 100%;
   background-color: #4fc1e9;
+  opacity: 0.7;
+  justify-content: flex-end;
   position: relative;
   display: flex;
-  justify-content: center;
 }
 .fristb {
   width: 90%;
@@ -48,8 +44,8 @@ export default {
   bottom: 0;
   margin: 0px auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
   flex-direction: column;
 }
 .fs {
@@ -57,7 +53,14 @@ export default {
   margin-left: 1rem !important;
 }
 .fss {
-  font-size: 0.5px !important;
+  font-size: 10px !important;
+  margin-left: 1.5rem !important;
+}
+.cs {
+  font-size: 3rem !important;
+}
+.css {
+  font-size: 1.9rem !important;
 }
 .firstc {
   width: 5%;
@@ -75,32 +78,14 @@ export default {
   font-size: 4rem;
   font-family: bold;
   text-align: start;
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 .title__sub {
   font-size: 2rem;
-  width: 90%;
-  height: 60%;
-  display: flex;
+  margin-left: 10rem;
 }
 .title__sub > * {
-  margin: 0.5rem;
-  flex: 1;
-}
-.title__sub__left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.title__sub__right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cs {
-  font-size: 3rem !important;
-}
-.css {
-  font-size: 1.9rem !important;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 </style>

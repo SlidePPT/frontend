@@ -36,9 +36,10 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #4fc1e9;
+  opacity: 0.7;
+  justify-content: flex-end;
   position: relative;
   display: flex;
-  justify-content: center;
 }
 .fristb {
   width: 90%;
@@ -75,7 +76,7 @@ export default {
   font-size: 4rem;
   font-family: bold;
   text-align: start;
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 .title__sub {
   font-size: 2rem;

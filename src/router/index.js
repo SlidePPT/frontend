@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Create from '../views/create.vue'
+import Create2 from '../views/create2.vue'
 import Main from '../views/main.vue'
 import Template from "../component/Template/one/Template1.vue"
 Vue.use(VueRouter)
@@ -18,13 +19,18 @@ const routes = [
     component: Create
   },
   {
+    path: '/create2',
+    name: "create2",
+    component: Create2
+  },
+  {
     path: '/main',
     name: "main",
     component: Main
   },
   {
     path: '/template',
-    name : "template",
+    name: "template",
     component: Template
   }
 
