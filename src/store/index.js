@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -32,9 +33,9 @@ let five = {
 
 export default new Vuex.Store({
   state: {
-    code: "ABC",
     router: "down",
     ppt: {
+      _id : "abc",
       template: 1,
       now: 0,
       number: []
@@ -62,6 +63,20 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    make(data){
+      return new Promise(()=>{ axios.post(`http://192.168.35.84:4000/certification/make`, 
+          { ppt:data.state.ppt})
+          .then(response => {
+           console.log("성공",response.data.ppt)
+           this.state.ppt = response.data.ppt
+          }).catch((ex) => {
+             console.log("에러 : ",ex)
+          })
+      })
+  }
+  
+
+
   },
   modules: {
   }

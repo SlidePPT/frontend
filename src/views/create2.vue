@@ -23,7 +23,7 @@ export default {
     goto1() {
       this.$store.state.ppt.template = 0;
       this.$store.state.router = "left";
-      this.$store.state.ppt.number.push(
+      this.$store.state.ppt.number = [
         {
           number: "1",
           title: "제목을 입력해주세요",
@@ -55,13 +55,18 @@ export default {
           title: "Thanks for listening",
           text: "감사합니다"
         }
-      );
+      ];
+        this.$store.dispatch("make",this.$store.state.ppt)
+
+
+
+
       this.$router.push("/main");
     },
     goto2() {
       this.$store.state.ppt.template = 1;
       this.$store.state.router = "left";
-      this.$store.state.ppt.number.push(
+      this.$store.state.ppt.number = [
         {
           number: "1",
           title: "제목을 입력해주세요",
@@ -93,7 +98,9 @@ export default {
           title: "Thanks for listening",
           text: "감사합니다"
         }
-      );
+      ];
+        this.$store.dispatch("make")
+        console.log("dd")
       this.$router.push("/main");
     }
   },

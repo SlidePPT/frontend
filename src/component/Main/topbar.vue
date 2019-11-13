@@ -1,6 +1,6 @@
 <template>
   <div class="topbar">
-    <div class="key">Key : {{this.$store.state.code}}</div>
+    <div class="key">Key : {{this.$store.state.ppt._id}}</div>
     <div style="display:flex;">
       <div style="margin:10px" @click="addview1()">시작화면추가</div>
       <div style="margin:10px" @click="addview2()">목차화면추가</div>
