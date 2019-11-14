@@ -29,6 +29,8 @@ export default {
     input() {
         this.$store.dispatch("check",{}).then(response=>{
             if(response.st){ 
+              console.log(this.$store.state.ppt)
+              this.$store.state.router = "down";
               this.$router.push("/mainview")
             }
           })
