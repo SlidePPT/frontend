@@ -9,7 +9,7 @@
       <div style="margin:10px" @click="addview5()">END화면추가</div>
     </div>
     <div style="display:flex; margin:20px;">
-      <div class="save">저장하기</div>
+      <div class="save" @click="save()">저장하기</div>
       <div class="exit" @click="exit()">나가기</div>
     </div>
   </div>
@@ -36,6 +36,9 @@ export default {
     },
     addview5() {
       this.$store.commit("addview5");
+    },
+    save(){
+      this.$store.dispatch("save","테스트");
     }
   }
 };
