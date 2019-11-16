@@ -69,7 +69,7 @@ export default new Vuex.Store({
   actions: {
     make(data) {
       return new Promise(() => {
-        axios.post(`http://10.56.212.127:4000/certification/make`,
+        axios.post(`http://192.168.35.84:4000/certification/make`,
           { ppt: data.state.ppt })
         .then(response => {
           console.log("성공", response.data.ppt)
@@ -81,7 +81,7 @@ export default new Vuex.Store({
     },
     save(data) {
       return new Promise(() => {
-        axios.post(`http://10.56.212.127:4000/certification/save`,
+        axios.post(`http://192.168.35.84:4000/certification/save`,
           { ppt: data.state.ppt })
         .then(response => {
           console.log("성공", response.data.ppt)
@@ -93,7 +93,7 @@ export default new Vuex.Store({
     },
     check(data) {
       return new Promise((resolve, reject) => {
-        axios.post(`http://10.56.212.127:4000/certification/check`,
+        axios.post(`http://192.168.35.84:4000/certification/check`,
           { code: data.state.code })
         .then(response => {
           console.log("성공", response.data)
