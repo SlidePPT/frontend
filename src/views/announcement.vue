@@ -1,16 +1,21 @@
 <template>
-  <div class="anno__wrap">
-            <Test1 :data="$store.state.ppt.number[0]" v-if="0 == $store.state.ppt.now"></Test1>
-            <Test2 :data="$store.state.ppt.number[1]" v-if="1 == $store.state.ppt.now"></Test2>
-            <Test3 :data="$store.state.ppt.number[2]" v-if="2 == $store.state.ppt.now"></Test3>
-            <Test4 :data="$store.state.ppt.number[3]" v-if="3 == $store.state.ppt.now"></Test4>
-            <Test5 :data="$store.state.ppt.number[4]" v-if="4 == $store.state.ppt.now"></Test5>
-            <Test6 :data="$store.state.ppt.number[5]" v-if="5 == $store.state.ppt.now"></Test6>
-            <Test7 :data="$store.state.ppt.number[6]" v-if="6 == $store.state.ppt.now"></Test7>
-            <Test8 :data="$store.state.ppt.number[7]" v-if="7 == $store.state.ppt.now"></Test8>
-            <Test9 :data="$store.state.ppt.number[8]" v-if="8 == $store.state.ppt.now"></Test9>
-            <Test10 :data="$store.state.ppt.number[9]" v-if="9 == $store.state.ppt.now"></Test10>
-  </div>
+    <div class="anno__wrap">
+        <div @click.left="up()" @click.right="down()" v-for="(a,index) in $store.state.ppt.number" :key="index">
+            <div class="anno_wrap">
+                    <Test1 :data="a" v-if="now == index && a.number == '1' && $store.state.ppt.template == 0" class="anno__wrap"></Test1>
+                    <Test2 :data="a" v-if="now == index &&a.number == '2' && $store.state.ppt.template == 0" class="anno__wrap"></Test2>
+                    <Test3 :data="a" v-if="now == index &&a.number == '3' && $store.state.ppt.template == 0" class="anno__wrap"></Test3>
+                    <Test4 :data="a" v-if="now == index &&a.number == '4' && $store.state.ppt.template == 0" class="anno__wrap"></Test4>
+                    <Test5 :data="a" v-if="now == index &&a.number == '5' && $store.state.ppt.template == 0" class="anno__wrap"></Test5>
+                    <Test6 :data="a" v-if="now == index &&a.number == '1' && $store.state.ppt.template == 1" class="anno__wrap"></Test6>
+                    <Test7 :data="a" v-if="now == index &&a.number == '2' && $store.state.ppt.template == 1" class="anno__wrap"></Test7>
+                    <Test8 :data="a" v-if="now == index &&a.number == '3' && $store.state.ppt.template == 1" class="anno__wrap"></Test8>
+                    <Test9 :data="a" v-if="now == index &&a.number == '4' && $store.state.ppt.template == 1" class="anno__wrap"></Test9>
+                    <Test10 :data="a" v-if="now == index &&a.number == '5' && $store.state.ppt.template == 1" class="anno__wrap"></Test10>
+                    <div  class="anno__wrap" v-if="$store.state.ppt.number.length == now && index == 0" style="display:flex; justify-content:center; align-items: center;">PPT가 종료되었습니다<button @click="exit()">나가기</button></div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -41,15 +46,59 @@ export default {
    data() {
     return {
       deferredPrompt: null,
-      data: "입력 후 ENTER를 눌러주세요"
+      data: "입력 후 ENTER를 눌러주세요",
+      now : 0,
     };
   },
+  methods:{
+      up(){
+          console.log(this.$store.state.ppt.number.length)
+          if(this.now != this.$store.state.ppt.number.length+1){
+            this.now++;
+          }
+      },
+      down(){
+          if(this.now != 0 ){
+          this.now--;
+          }
+      },
+      exit(){
+          this.$router.push("/mainview");
+      }
+
+  }
 }
 </script>
 
 <style>
 .anno__wrap{
     width: 100%;
-    height:100%;
+    height:100vh !important;
+    
 }
+.down-enter {
+  transform: translateY(100%);
+}
+.down-enter-to {
+  transform: translateY(0px);
+}
+.down-leave {
+  transform: translateY(0px);
+}
+.down-leave-to {
+  transform: translateY(-100%);
+}
+.up-enter {
+  transform: translateY(-100%);
+}
+.up-enter-to {
+  transform: translateY(0px);
+}
+.up-leave {
+  transform: translateY(0px);
+}
+.up-leave-to {
+  transform: translateY(100%);
+}
+
 </style>
