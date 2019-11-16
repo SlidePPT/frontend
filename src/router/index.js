@@ -6,6 +6,8 @@ import Create2 from '../views/create2.vue'
 import Main from '../views/main.vue'
 import Template from "../component/Template/one/Template1.vue"
 import Mainview from "../views/mainview.vue"
+import Anno from "../views/announcement.vue"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -38,6 +40,11 @@ const routes = [
     path: '/mainview',
     name: "mainview",
     component: Mainview
+  },
+  {
+    path: '/anno',
+    name: "anno",
+    component: Anno
   }
 
 ]

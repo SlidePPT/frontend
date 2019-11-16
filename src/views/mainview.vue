@@ -1,7 +1,7 @@
 <template>
   <div class="Mainview__wrap">
     <div></div>
-    <div class="Mainview__box"><span>발표하기</span></div>
+    <div class="Mainview__box" @click="anno()"><span>발표하기</span></div>
     <div class="Mainview__box" @click="Modify()"><span>수정하기</span></div>
     <div></div>
   </div>
@@ -9,9 +9,13 @@
 
 <script>
 export default {
+  
   methods:{
     Modify(){
       this.$router.push("/main");
+    },
+    anno(){
+      this.$router.push("/anno");
     }
   }
 };
