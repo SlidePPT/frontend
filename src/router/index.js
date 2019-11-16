@@ -5,6 +5,7 @@ import Create from '../views/create.vue'
 import Create2 from '../views/create2.vue'
 import Main from '../views/main.vue'
 import Template from "../component/Template/one/Template1.vue"
+import Mainview from "../views/mainview.vue"
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,10 +29,15 @@ const routes = [
     name: "main",
     component: Main
   },
+  ,
   {
     path: '/template',
     name: "template",
     component: Template
+  }, {
+    path: '/mainview',
+    name: "mainview",
+    component: Mainview
   }
 
 ]

@@ -1,7 +1,12 @@
 <template>
   <div class="Main__warp">
     <img class="Main__Title" src="../assets/sliceLogo.png" width="300px" height="300px" />
-    <input class="Main__Input" :placeholder="data" @keyup.enter="input()" v-model="$store.state.code" />
+    <input
+      class="Main__Input"
+      :placeholder="data"
+      @keyup.enter="input()"
+      v-model="$store.state.code"
+    />
     <div class="Main__Create" @click="create()">코드생성</div>
     <div @click="install()" style="padding:10px; font-size: 18px;">모바일 앱 다운</div>
   </div>
@@ -11,10 +16,10 @@ export default {
   data() {
     return {
       deferredPrompt: null,
-      data: "입력 후 ENTER를 눌러주세요",
+      data: "입력 후 ENTER를 눌러주세요"
     };
   },
- 
+
   mounted() {
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
@@ -27,16 +32,18 @@ export default {
       this.deferredPrompt.prompt();
     },
     input() {
-        this.$store.dispatch("check",{}).then(response=>{
-            if(response.st){ 
-              console.log(this.$store.state.ppt)
-              this.$store.state.router = "down";
-              this.$router.push("/mainview")
-            }
-          })
-          .catch(e=>{
-            console.log("에러")
-          })
+      this.$store
+        .dispatch("check", {})
+        .then(response => {
+          if (response.st) {
+            this.$store.state.router = "down";
+            console.log(this.$store.state.ppt);
+            this.$router.push("/mainview");
+          }
+        })
+        .catch(e => {
+          console.log("에러");
+        });
     },
     create() {
       this.$store.state.router = "down";

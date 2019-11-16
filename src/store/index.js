@@ -36,7 +36,7 @@ export default new Vuex.Store({
     code: "",
     router: "down",
     ppt: {
-      _id : "abc",
+      _id: "abc",
       template: 1,
       now: 0,
       number: []
@@ -62,53 +62,56 @@ export default new Vuex.Store({
     addview5: function (state) {
       state.ppt.number.push({ number: "5", title: "Thanks for listening", text: "감사합니다" })
     },
-    move(){
+    move() {
       router.push("/mainview");
     }
   },
   actions: {
-    make(data){
-      return new Promise(()=>{ axios.post(`http://192.168.35.84:4000/certification/make`, 
-          { ppt:data.state.ppt})
-          .then(response => {
-           console.log("성공",response.data.ppt)
-           this.state.ppt = response.data.ppt
-          }).catch((ex) => {
-             console.log("에러 : ",ex)
-          })
-      })
-  },
-  save(data){
-    return new Promise(()=>{ axios.post(`http://192.168.35.84:4000/certification/save`, 
-        { ppt:data.state.ppt })
+    make(data) {
+      return new Promise(() => {
+        axios.post(`http://10.56.212.127:4000/certification/make`,
+          { ppt: data.state.ppt })
         .then(response => {
-         console.log("성공",response.data.ppt)
-         this.state.ppt = response.data.ppt
+          console.log("성공", response.data.ppt)
+          this.state.ppt = response.data.ppt
         }).catch((ex) => {
-          console.log("에러 : ",ex)
+          console.log("에러 : ", ex)
         })
       })
     },
-    check(data){
-      return new Promise((resolve, reject)=>{ axios.post(`http://192.168.35.84:4000/certification/check`, 
-      { code:data.state.code })
-      .then(response => {
-        console.log("성공",response.data)
-        this.state.ppt = response.data
-        if(response.data){
-        resolve({st : true});
-        }
-        else {
-          resolve({st : false});
-        }
-      }).catch((ex) => {
-         console.log("에러 : ",ex)
-         reject({st : false});
+    save(data) {
+      return new Promise(() => {
+        axios.post(`http://10.56.212.127:4000/certification/save`,
+          { ppt: data.state.ppt })
+        .then(response => {
+          console.log("성공", response.data.ppt)
+          this.state.ppt = response.data.ppt
+        }).catch((ex) => {
+          console.log("에러 : ", ex)
+        })
       })
-  })
-}
+    },
+    check(data) {
+      return new Promise((resolve, reject) => {
+        axios.post(`http://10.56.212.127:4000/certification/check`,
+          { code: data.state.code })
+        .then(response => {
+          console.log("성공", response.data)
+          this.state.ppt = response.data
+          if (response.data) {
+            resolve({ st: true });
+          }
+          else {
+            resolve({ st: false });
+          }
+        }).catch((ex) => {
+          console.log("에러 : ", ex)
+          reject({ st: false });
+        })
+      })
+    }
 
-  
+
 
 
   },
