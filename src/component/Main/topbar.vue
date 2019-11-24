@@ -19,8 +19,12 @@
 export default {
   methods: {
     exit() {
-      this.$store.state.router = "right";
-      this.$router.push("/");
+      let a = confirm("저장을 하셨습니까?");
+      if (a == true) {
+        this.$store.state.router = "right";
+        this.$router.push("/");
+      } else {
+      }
     },
     addview1() {
       this.$store.commit("addview1");
@@ -37,8 +41,9 @@ export default {
     addview5() {
       this.$store.commit("addview5");
     },
-    save(){
-      this.$store.dispatch("save","테스트");
+    save() {
+      alert("저장되었습니다");
+      this.$store.dispatch("save", "테스트");
     }
   }
 };

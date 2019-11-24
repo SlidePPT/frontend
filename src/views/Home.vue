@@ -8,7 +8,6 @@
       v-model="$store.state.code"
     />
     <div class="Main__Create" @click="create()">코드생성</div>
-    <div @click="install()" style="padding:10px; font-size: 18px;">모바일 앱 다운</div>
   </div>
 </template>
 <script>
