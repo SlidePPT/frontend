@@ -7,7 +7,7 @@
       @keyup.enter="input()"
       v-model="$store.state.code"
     />
-    <div class="Main__Create" @click="create()">코드생성</div>
+    <div class="Main__Create" @click="create()">PPT 생성</div>
   </div>
 </template>
 <script>
